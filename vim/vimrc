@@ -1,0 +1,165 @@
+"--------------------------------------------------------------------------------
+"   Description:   Kejie-Wang's vimrc
+"   Author:        Kejie-Wang<wang_kejie@foxmail.com>
+"   Github:        https://github.com/Kejie-Wang
+"   Website:       http://wangkejie.me
+"--------------------------------------------------------------------------------
+
+"----------------------Base configuration----------------------------
+
+
+
+"------------------ Base configuration End ---------------------------
+
+
+
+"------------------------------------------------------------
+"   Section: Vundle configuration
+"   Description: Vundle is a plugin manager for vim
+"   Website: https://github.com/VundleVim/Vundle.vim
+"   Help:
+"        :PluginList       - lists configured plugins
+"        :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+"        :PluginSearch foo - searches for foo; append `!` to refresh local cache
+"        :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"------------------------------------------------------------
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'Valloric/YouCompleteMe'
+
+Plugin 'scrooloose/nerdtree'
+
+Plugin 'jistr/vim-nerdtree-tabs'
+
+Plugin 'gcmt/taboo.vim'
+
+Plugin 'scrooloose/nerdcommenter'
+
+Plugin 'Lokaltog/vim-powerline'
+
+Plugin 'tomasr/molokai'
+
+Plugin 'altercation/vim-colors-solarized'
+
+Plugin 'sickill/vim-monokai'
+
+Plugin 'tpope/vim-vividchalk'
+
+Plugin 'morhetz/gruvbox'
+
+Plugin 'tpope/vim-pathogen'
+
+Plugin 'taketwo/vim-ros'
+" Install L9 and avoid a Naming conflict if you've already installed a
+" different version somewhere else.
+" Plugin 'ascenator/L9', {'name': 'newL9'}
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+"------------------------------------------------------------
+
+
+
+
+
+"------------------------------------------------------------
+"   Section: YouCompleteMe Configuration
+"   Description: YouCompleteMe is a fast completion engine for vim
+"   Website: https://github.com/Valloric/YouCompleteMe
+"   
+"------------------------------------------------------------
+set runtimepath+=~/.vim/bundle/YouCompleteMe
+let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_seed_identifiers_with_syntax = 1
+let g:ycm_complete_in_comments = 1 "complete in comments
+let g:ycm_confirm_extra_conf=0
+let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+let g:ycm_path_to_python_interpreter="/usr/bin/python"
+"set error or warning signs
+let g:syntastic_error_symbol = '✗'
+let g:syntastic_warning_symbol = '⚠'
+set nu
+syntax on
+set backspace=indent,eol,start
+"-----------------------------------------------------------
+
+
+
+
+
+execute pathogen#infect()
+
+"-----------------------------------------------------------
+"   Section: NERDTree Configuration
+"   Description: NERDTree is a file system explorer for vim editor
+"   Website: https://github.com/scrooloose/nerdtree
+"-----------------------------------------------------------
+" map <F5> to open or close NERDTree 
+map <F5> :NERDTreeToggle<cr>
+" use shift j/k to change tabs
+nmap <S-j> :tabp <cr>
+nmap <S-k> :tabn <cr>
+
+" automatically close vim if there is only nerdtree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") &&b:NERDTreeType == "primary") | q | endif 
+
+let NERDTreeShowLineNumber = 1
+let NERDTreeAutoCentor = 1
+let NERDTreeShowBookmarks = 1
+" only open NERDTree on console if dir was given
+" if set to 1, it always open NERDTree
+" if set to 0, it will not open NERDTree
+let g:nerdtree_tabs_open_on_console_startup=2
+" focus NREDTree if opening a dir, focus file if opening a file
+let g:nerdtree_tabs_smart_startup_focus=1
+let NERDTreeIgnore=['\.pyc','\~$','\.swp']
+let g:nerdtree_tabs_autofind=1
+
+let g:taboo_tab_format=" %N %f%m  "
+"-----------------------------------------------------------
+
+
+
+"-----------------------------------------------------------
+"   Section: NERDComment Configuration
+"   Description: NERDComment Configuration
+"   Website: https://github.com/scrooloose/nerdcommenter
+"-----------------------------------------------------------
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 0
+
+" powerline
+set laststatus=2   " Always show the statusline
+"set t_Co=256
+let g:Powerline_symbols = 'fancy'
+set encoding=utf-8 " Necessary to show Unicode glyphs
+
+" set paste mode
+nnoremap <F11> :set invpaste paste?<CR>
+imap <F11> <C-O>:set invpaste paste?<CR>
+set pastetoggle=<F11>
+
+set tabstop=2 "set tab display width 4
+set softtabstop=2 " set the backspace width 4 in backspace indent 
+set shiftwidth=2 "set the autoindent 4 width
+"set space to replace tab
+set expandtab
+"if you want to \t to devote tab
+"set noexpandtab
+
+set background=dark
+colorscheme gruvbox

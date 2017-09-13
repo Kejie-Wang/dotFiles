@@ -1,0 +1,10 @@
+[user]
+	email = wang_kejie@foxmail.com
+	name = Kejie-Wang
+[core]
+	editor = vim
+[alias]
+	co = checkout
+	st = status
+	cm = commit
+	unstage = reset HEAD --
