@@ -2,6 +2,11 @@ PROJ_DIR="$(cd `dirname $0` ; pwd)"
 
 # add vimrc
 ln -s ${PROJ_DIR}/vim/vimrc ${HOME}/.vimrc
+# install vundle to manage vim plugin
+if [! -d ~/.vim/bundle]; then
+  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+fi
+vim +PluginInstall +qall
 
 # add gitconfig
 ln -s ${PROJ_DIR}/git/gitconfig ${HOME}/.gitconfig
