@@ -10,7 +10,8 @@ My configuration files which includes:
 
 # Installation
 
-`git clone git@github.com:Kejie-Wang/dotFiles.git ~/.dotfile`
-
-`bash ~/.dotfile/install.sh`
+```shell
+git clone git@github.com:Kejie-Wang/dotFiles.git ~/.dotfile
+bash ~/.dotfile/install.sh
+```
 

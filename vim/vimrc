@@ -126,7 +126,7 @@ let NERDTreeShowBookmarks = 1
 let g:nerdtree_tabs_open_on_console_startup=2
 " focus NREDTree if opening a dir, focus file if opening a file
 let g:nerdtree_tabs_smart_startup_focus=1
-let NERDTreeIgnore=['\.pyc','\~$','\.swp']
+let NERDTreeIgnore=['\.pyc','\~$','\.swp', '\.o']
 let g:nerdtree_tabs_autofind=1
 
 let g:taboo_tab_format=" %N %f%m  "
