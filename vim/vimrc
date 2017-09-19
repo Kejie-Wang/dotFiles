@@ -59,12 +59,19 @@ Plugin 'morhetz/gruvbox'
 Plugin 'tpope/vim-pathogen'
 
 Plugin 'taketwo/vim-ros'
+
+Plugin 'google/vim-maktaba'
+
+Plugin 'google/vim-codefmt'
+
+Plugin 'google/vim-glaive'
 " Install L9 and avoid a Naming conflict if you've already installed a
 " different version somewhere else.
 " Plugin 'ascenator/L9', {'name': 'newL9'}
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
+call glaive#Install()
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
