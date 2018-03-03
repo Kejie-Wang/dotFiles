@@ -11,7 +11,6 @@ My configuration files which includes:
 # Installation
 
 ```shell
-git clone git@github.com:Kejie-Wang/dotFiles.git ~/.dotfile
+git clone https://github.com/Kejie-Wang/dotFiles.git ~/.dotfiles
 bash ~/.dotfile/install.sh
 ```
-
