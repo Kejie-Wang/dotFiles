@@ -58,8 +58,6 @@ Plugin 'morhetz/gruvbox'
 
 Plugin 'tpope/vim-pathogen'
 
-Plugin 'taketwo/vim-ros'
-
 Plugin 'google/vim-maktaba'
 
 Plugin 'google/vim-codefmt'
